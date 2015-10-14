@@ -1,4 +1,4 @@
-<?php
+<!--<?php
 
 $name = 'Name';
 $email = 'Email';
@@ -59,7 +59,7 @@ if(isset($_POST['schick'])){
     }
 }
 
-?>
+?-->
 <!DOCTYPE HTML>
 <!--
 	Spectral by HTML5 UP
@@ -358,7 +358,7 @@ if(isset($_POST['schick'])){
                     <div class="inner">
                         <header class="major">
                             <h2>Projektrahmen</h2>
-                            <p>Im Rahmen eines Diplomprojektes welches als Abschlussarbeit unserer höheren technischen Ausbildung dient, werden wir ein Horror-Spiel entwickeln.<br>
+                            <p>Im Rahmen eines Diplomprojektes welches als Abschlussarbeit unserer höheren technischen Ausbildung dient, werden wir ein Horror-Spiel entwickeln.
                                 Bei diesem Spiel wollen wir möglichst ohne Budget auskommen und versuchen Sponsoren für unser Projekt zu begeistern um gegebenenfalls lizenzierte Programme zu erhalten um das bestmögliche Ergebnis herauszubekommen.</p>
                         </header>
                     </div>
@@ -450,31 +450,17 @@ if(isset($_POST['schick'])){
                     <div class="inner">
                         <header class="major">
                             <h2>Noch Fragen?</h2>
-                            <form method="post" action="#seven">
                                 <div class="row uniform">
+                                    <div class="12u$">
+                                        Schick uns deine Frage per Email oder schreibe uns direkt auf Facebook!
+                                    </div>
                                     <div class="6u 12u$(xsmall)">
-                                        <input type="text" name="name" id="name" value="" placeholder="<?php echo $name;?>">
+                                        <a href="facebook.com"><i class='fa fa-facebook'></i> Facebook</a>
                                     </div>
                                     <div class="6u$ 12u$(xsmall)">
-                                        <input type="email" name="email" id="email" value="" placeholder="<?php echo $email;?>">
-                                    </div>
-
-                                    <div class="12u$">
-                                        <textarea name="text" id="text" placeholder="<?php echo $text;?>" rows="6"></textarea>
-                                    </div>
-                                    <div class="12u$">
-                                        <ul class="actions">
-                                            <li><input type="submit" name="schick" id="schick" value="Senden"></li>
-                                        </ul>
-                                    </div>
-                                    <div class="12u$">
-                                        <div align="center">
-                                            <?php echo $richtigmsg?>
-                                        </div>
+                                        <a href="mailto:info@phobiagame.me?subject=Meine Frage ans Phobia Team"> <i class="fa fa-envelope-o"></i> Email </a>                                    </div>
                                     </div>
                                 </div>
-                            </form>
-
                         </header>
                     </div>
                 </section>
@@ -482,11 +468,8 @@ if(isset($_POST['schick'])){
 				<!-- Footer -->
 					<footer id="footer">
 						<ul class="icons">
-							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+							<li><a href="mailto:info@phobiagame.me?subject=Meine Frage ans Phobia Team" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 						</ul>
 						<ul class="copyright">
 							<li>&copy; Team Phobia</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
