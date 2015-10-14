@@ -1,3 +1,65 @@
+<?php
+
+$name = 'Name';
+$email = 'Email';
+$text = 'Gib deine Nachricht ein!';
+$richtigmsg = '';
+
+if(isset($_POST['schick'])){
+
+    $typeerror = false;
+    $nameerror = false;
+    $emailerror = false;
+    $texterror = false;
+
+    if(isset($_POST['name'])&&$_POST['name']!='') $name = $_POST['name'];
+    else {
+        $typeerror = true;
+        $nameerror = true;
+    }
+    if(isset($_POST['email'])&&$_POST['email']!='') $email = $_POST['email'];
+    else {
+        $typeerror = true;
+        $emailerror = true;
+    }
+    if(isset($_POST['text'])&&$_POST['text']!='') $text = $_POST['text'];
+    else {
+        $typeerror = true;
+        $texterror = true;
+    }
+
+    if(!$typeerror){
+        $to = 'info@phobiagame.me';
+
+        $subject = 'Info Request - '.$name;
+
+        $headers = "From: " . $email . "\r\n";
+        $headers .= "Reply-To: ". $email . "\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+
+        $message = '<html><body>';
+        $message .= '<h1>Neue Infoanfrage von '.$name.'</h1>';
+        $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+        $message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . $name . "</td></tr>";
+        $message .= "<tr><td><strong>Email:</strong> </td><td>" . $email . "</td></tr>";
+        $message .= "<tr><td><strong>Text:</strong> </td><td>" . $text . "</td></tr>";
+        $message .= '</body></html>';
+
+        mail($to, $subject, $message, $headers);
+
+        $richtigmsg = 'Deine Email wurde versendet!';
+
+    }
+    else{
+        if($nameerror)$name = 'Sie müssen einen Namen angeben!';
+        if($emailerror)$email = 'Sie müssen eine Email angeben!';
+        if($texterror)$text = 'Sie müssen einen Text angeben!';
+    }
+}
+
+?>
 <!DOCTYPE HTML>
 <!--
 	Spectral by HTML5 UP
@@ -26,16 +88,16 @@
 						<nav id="nav">
 							<ul>
 								<li class="special">
-									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<!--<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-											<li><a href="index.html">Home</a></li>
+											<li><a href="index.php">Home</a></li>
 											<li><a href="generic.html">Generic</a></li>
 											<li><a href="elements.html">Elements</a></li>
 											<li><a href="#">Sign Up</a></li>
 											<li><a href="#">Log In</a></li>
 										</ul>
-									</div>
+									</div>-->
 								</li>
 							</ul>
 						</nav>
@@ -170,13 +232,14 @@
                                 <li class='work'>
                                     <input class='radio' id='work1' name='works' type='radio' checked>
                                     <div class="relative">
-                                        <label for='work1'>Raumplanung</label>
+                                        <label for='work1'><i class="fa fa-check"></i> Raumplanung</label>
                                         <span class='date'>Okt 2015</span>
                                         <span class='circle'></span>
                                     </div>
                                     <div class='contenttimeline'>
                                         <p>
-                                            Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.                                        </p>
+                                            Im Zuge der Raumplanung werden die Baupläne, der einzelnen Level, digital erstellt. Der Grundriss wird anschließend in der Unreal Engine 4 umgesetzt.
+                                        </p>
                                     </div>
                                 </li>
                                 <li class='work'>
@@ -188,7 +251,8 @@
                                     </div>
                                     <div class='contenttimeline'>
                                         <p>
-                                            Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.                                        </p>
+                                            Modellierung aller benötigten (3D-) Objekte / Props
+                                        </p>
                                     </div>
                                 </li>
                                 <li class='work'>
@@ -200,7 +264,8 @@
                                     </div>
                                     <div class='contenttimeline'>
                                         <p>
-                                            Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.                                        </p>
+                                            Erstellen der Texturen sowie anschließende Texturierung aller 3D-Objekte
+                                        </p>
                                     </div>
                                 </li>
                                 <li class='work'>
@@ -212,7 +277,8 @@
                                     </div>
                                     <div class='contenttimeline'>
                                         <p>
-                                            Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.                                        </p>
+                                            Fertig modellierte und texturierte Objekte werden in den schon vorhandenen Grundriss (UE4) eingefügt. Benötigte Licht und Partikel Effekte werden erstellt.
+                                        </p>
                                     </div>
                                 </li>
                                 <li class='work'>
@@ -224,7 +290,8 @@
                                     </div>
                                     <div class='contenttimeline'>
                                         <p>
-                                            Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.                                        </p>
+                                            Erstellung / Programmierung aller benötigten Blueprints & Trigger
+                                        </p>
                                     </div>
                                 </li>
                                 <li class='work'>
@@ -236,7 +303,8 @@
                                     </div>
                                     <div class='contenttimeline'>
                                         <p>
-                                            Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.                                        </p>
+                                            Die Alpha-Tests sind nicht öffentlich zugägnlich. Die Testung erfolgt für jedes Level einzeln und soll Schwächen und Fehler im Spiel aufzeigen.
+                                        </p>
                                     </div>
                                 </li>
                                 <li class='work'>
@@ -248,7 +316,8 @@
                                     </div>
                                     <div class='contenttimeline'>
                                         <p>
-                                            Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.                                        </p>
+                                            Nach der Ausbesserung der Schwächen und Fehler werden die einzelnen Level zu einem kompletten Spiel zusammengefügt.
+                                        </p>
                                     </div>
                                 </li>
                                 <li class='work'>
@@ -260,7 +329,8 @@
                                     </div>
                                     <div class='contenttimeline'>
                                         <p>
-                                            Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.                                        </p>
+                                            Vor der Veröffentlichung wird das Spiel im zuge einer closed-Beta nochmals auf Fehler getestet. Treten Probleme und Fehler auf werden diese bis zum geplanten Release ausgebessert.
+                                        </p>
                                     </div>
                                 </li>
                                 <li class='work'>
@@ -272,7 +342,7 @@
                                     </div>
                                     <div class='contenttimeline'>
                                         <p>
-                                            Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.
+                                            Veröffentlichung des kompletten Spieles
                                         </p>
                                     </div>
                                 </li>
@@ -380,22 +450,27 @@
                     <div class="inner">
                         <header class="major">
                             <h2>Noch Fragen?</h2>
-                            <form method="post" action="#">
+                            <form method="post" action="#seven">
                                 <div class="row uniform">
                                     <div class="6u 12u$(xsmall)">
-                                        <input type="text" name="demo-name" id="demo-name" value="" placeholder="Name">
+                                        <input type="text" name="name" id="name" value="" placeholder="<?php echo $name;?>">
                                     </div>
                                     <div class="6u$ 12u$(xsmall)">
-                                        <input type="email" name="email" id="email" value="" placeholder="Email">
+                                        <input type="email" name="email" id="email" value="" placeholder="<?php echo $email;?>">
                                     </div>
 
                                     <div class="12u$">
-                                        <textarea name="message" id="demo-message" placeholder="Gib deine Nachricht ein!" rows="6"></textarea>
+                                        <textarea name="text" id="text" placeholder="<?php echo $text;?>" rows="6"></textarea>
                                     </div>
                                     <div class="12u$">
                                         <ul class="actions">
-                                            <li><input type="submit" value="Senden"></li>
+                                            <li><input type="submit" name="schick" id="schick" value="Senden"></li>
                                         </ul>
+                                    </div>
+                                    <div class="12u$">
+                                        <div align="center">
+                                            <?php echo $richtigmsg?>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
