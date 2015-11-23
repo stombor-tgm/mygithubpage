@@ -76,6 +76,11 @@ if(isset($_POST['schick'])){
         <link rel="stylesheet" href="assets/css/timeline.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+
+
+    <!-- jQuery Popup Overlay -->
+
 	</head>
 	<body class="landing">
 
@@ -106,7 +111,7 @@ if(isset($_POST['schick'])){
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
-							<h2><img src="images/Phobia_Logo_V2.png" width="100%"></h2>
+							<h2><img src="images/phobia_logo_V2.png" width="100%"></h2>
 							<!--<p>Jonathan Blake findet sich auf einmal, an einem für ihn, ungewohnten Ort wieder. Schnell stellt er fest dass es nur einen Weg aus seiner Situation gibt, sich seinen tiefsten Ängsten zu stellen. Auf ihn warten zahlreiche Rätsel, Aufgaben und unerwartete Begegnungen mit Personen aus seiner Vergangenheit. Jonathan kämpft sich mit aller Kraft durch die verschiedenen Szenerien. Kannst du ihm helfen?</p>
 							<ul class="actions">
 								<li><a href="#" class="button special">Activate</a></li>
@@ -129,9 +134,9 @@ if(isset($_POST['schick'])){
 					<section id="two" class="wrapper alt style2">
 						<section class="spotlight">
 							<div class="image"><img src="images/acholuophobie.png" alt="" /></div><div class="content">
-								<h2>Acholuophobia</h2>
+								<h2>Achluophobia</h2>
                                 <p>
-                                    Acholuophobie ist die Angst vor dem Unbekannten in der Dunkelheit und unheimlichen Orten, inszeniert in einem furchteinflößenden Wald, wird dich an die Grenze deiner Belastbarkeit bringen. Das Voranschreiten wird schwerer als Gedacht werden Finde die Lösung um aus dem Wald zu entkommen und komme nicht vom Weg ab…
+                                    Achluophobie ist die Angst vor dem Unbekannten in der Dunkelheit und unheimlichen Orten, inszeniert in einem furchteinflößenden Wald, wird dich an die Grenze deiner Belastbarkeit bringen. Das Voranschreiten wird schwerer als Gedacht werden Finde die Lösung um aus dem Wald zu entkommen und komme nicht vom Weg ab…
                                 </p>
                             </div>
                         </section>
@@ -245,7 +250,7 @@ if(isset($_POST['schick'])){
                                 <li class='work'>
                                     <input class='radio' id='work2' name='works' type='radio'>
                                     <div class="relative">
-                                        <label for='work2'>Modellierung</label>
+                                        <label for='work2'>Modellierung  <i class="fa fa-check"></i></label>
                                         <span class='date'>Nov 2015</span>
                                         <span class='circle'></span>
                                     </div>
@@ -258,7 +263,7 @@ if(isset($_POST['schick'])){
                                 <li class='work'>
                                     <input class='radio' id='work3' name='works' type='radio'>
                                     <div class="relative">
-                                        <label for='work3'>Texturierung</label>
+                                        <label for='work3'>Texturierung  <i class="fa fa-check"></i></label>
                                         <span class='date'>Dez 2015</span>
                                         <span class='circle'></span>
                                     </div>
@@ -385,7 +390,7 @@ if(isset($_POST['schick'])){
                                         <span class="image fit"><img src="images/bsch.jpg" alt=""></span>
                                     </div>
                                     <div class="8u">
-                                        <h4 style="padding-top: 10%">Bernhard Schmidt</h4>
+                                        <h4 style="padding-top: 10%">Bernhard Schmid</h4>
                                         <p>Technical Architekt | Hermaphobia </p>
                                     </div>
                                 </div>
@@ -469,15 +474,70 @@ if(isset($_POST['schick'])){
 					<footer id="footer">
 						<ul class="icons">
 							<li><a href="https://www.facebook.com/phobiagame" class="icon fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
-                            <li><a href="https://www.youtube.com/channel/UCpv_rvrdQUK9JzL-FU9Xa-w" class="icon fa-youtube-play" target="_blank"><span class="label">Facebook</span></a></li>
+              <li><a href="https://www.youtube.com/channel/UCpv_rvrdQUK9JzL-FU9Xa-w" class="icon fa-youtube-play" target="_blank"><span class="label">Facebook</span></a></li>
 							<li><a href="mailto:info@phobiagame.me?subject=Meine Frage ans Phobia Team" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 						</ul>
-						<ul class="copyright">
+						<button class="my_popup_open">Impressum</button>
+						<ul class="copyright" style="margin-top:20px;">
 							<li>&copy; Team Phobia</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 						</ul>
 					</footer>
 
 			</div>
+
+
+
+  <!-- Add content to the popup -->
+  <div id="my_popup">
+		<div align="center">
+			<div class="box alt">
+					<div class="row uniform 50%">
+						<div class="2u"></div>
+						<div class="8u">
+							<h2>Impressum</h2>
+							<hr class="star-primary">
+								<h4>Medieninhaber, Hersteller, Herausgeber und Redaktion</h4>
+								<p class="text-muted">
+										TGM – Technologisches Gewerbeuseum <br>
+										HTBLuVA Wien XX <br>
+										1200 Wien, Wexstraße 19-23
+								</p>
+
+								<h4>Kontaktdaten</h4>
+								<p class="text-muted">
+										TGM – Technologisches Gewerbeuseum <br>
+										HTBLuVA Wien XX <br>
+										1200 Wien, Wexstraße 19-23 <br>
+										<br>
+										Tel.: +43 (0)1 33 126-0 <br>
+										Fax: +43 (0)1 33 126-204 <br>
+										E-Mail: info@tgm.ac.at <br>
+										<br>
+										Schulkennzahl: 920 417
+								</p>
+
+								<h4>Webdesign und Webprogrammierung</h4>
+								<p class="text-muted">Daniel Bruendl, Bernhard Schmid, Lukas Sprung, Sebastian Tombor, Florian Kibler</p>
+
+								<h4>Grundlegende Richtung dieses Webportals</h4>
+								<p class="text-muted">Diese Website informiert über Bildungsangebot, Aktivitäten und Unterrichtsarbeit am TGM. Die Inhalte dieser Seiten sind urheberrechtlich geschützt, und die Informationen sind nur für die persönliche Verwendung bestimmt. Jede weitergehende Nutzung, insbesondere die Speicherung in Datenbanken, Veröffentlichung, Vervielfältigung und jede Form von gewerblicher Nutzung, sowie die Weitergabe an Dritte – auch in Teilen oder in überarbeiteter Form – ohne Zustimmung des TGM ist untersagt.</p>
+
+								<h4>Urheberrecht</h4>
+								<p class="text-muted">Wir sind bestrebt, die Urheberrechte der verwendeten Inhalte und Medien zu beachten. Sollte sich dennoch ein durch fremdes Urheberrecht geschützter Inhalt befinden, so konnte das Urheberrecht von uns nicht festgestellt werden. Im Falle einer solchen unbeabsichtigten Urheberrechtsverletzung wird das entsprechende Objekt nach Benachrichtigung entfernt bzw. mit dem entsprechenden Urheberrecht kenntlich machen.</p>
+
+								<h4>Haftungsausschluss</h4>
+								<p class="text-muted">Wir sind bestrebt die Inhalte aktuell und korrekt zu halten. Sollten Sie Fehler oder Irrtümer auf der Site entdecken, bitten wir Sie, uns darüber in Kenntnis zu setzen. Wir übernehmen keine Gewähr für die Vollständigkeit oder Qualität der bereitgestellten Informationen. Haftungsansprüche, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen verursacht wurden, sind grundsätzlich ausgeschlossen. Die Schule kann weiters nicht gewährleisten, dass die online abrufbare Fassung eines Dokuments exakt dem offiziellen Text entspricht. Nur die in der Papierausgabe der Dokumente der Schule veröffentlichte Fassung ist verbindlich. Dieser Haftungsausschluss ist als Teil dieses Internetangebotes zu betrachten. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.</p>
+
+
+
+								<!-- Add an optional button to close the popup -->
+								<button class="my_popup_close">Close</button></div>
+						<div class="2u"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -487,6 +547,20 @@ if(isset($_POST['schick'])){
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/jquery.popupoverlay.js"></script>
+
+			<script>
+    		$(document).ready(function() {
+
+      		// Initialize the plugin
+      		$('#my_popup').popup({
+						color: 'black',
+			      opacity: 1,
+			      transition: '0.3s'
+					});
+
+    		});
+  		</script>
 
 	</body>
 </html>
